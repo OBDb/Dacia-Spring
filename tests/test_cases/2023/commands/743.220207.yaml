@@ -1,0 +1,11 @@
+command_id: '743.220207'
+test_cases:
+- expected_values:
+    DACIA_ODO: 38144
+  response: '76306620207009500'
+- expected_values:
+    DACIA_ODO: 3117824
+  response: 763066202072F9300
+- expected_values:
+    DACIA_ODO: 16749568
+  response: 76306620207FF9400

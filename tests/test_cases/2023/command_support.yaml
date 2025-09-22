@@ -1,0 +1,4 @@
+model_year: 2023
+supported_commands_by_ecu:
+  "743":
+  - 743.220207:DACIA_ODO
