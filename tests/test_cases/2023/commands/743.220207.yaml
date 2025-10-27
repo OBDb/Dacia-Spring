@@ -7,5 +7,8 @@ test_cases:
     DACIA_ODO: 3117824
   response: 763066202072F9300
 - expected_values:
+    DACIA_ODO: 10401536
+  response: 763066202079EB700
+- expected_values:
     DACIA_ODO: 16749568
   response: 76306620207FF9400
