@@ -1,8 +1,8 @@
 command_id: '743.220207'
 test_cases:
 - expected_values:
-    DACIA_ODO: 16613888
+    SPRING_ODO: 33533
   response: 76306620207FD8200
 - expected_values:
-    DACIA_ODO: 16679424
+    SPRING_ODO: 33534
   response: 76306620207FE8200

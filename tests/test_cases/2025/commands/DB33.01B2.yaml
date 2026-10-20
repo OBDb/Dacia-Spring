@@ -1,0 +1,5 @@
+command_id: DB33.01B2
+test_cases:
+- expected_values:
+    BAT_SOH: 96.07843
+  response: 18DAF1DB0341B2F5
