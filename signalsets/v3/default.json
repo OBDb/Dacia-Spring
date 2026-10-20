@@ -7,6 +7,291 @@
   "signals": [
     {"id": "SPRING_BAT_V", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "Battery voltage", "suggestedMetric": "starterBatteryVoltage"}
   ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4009"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_CABIN_T", "path": "Climate", "fmt": { "len": 16, "max": 3236.7, "min": -3316.8, "div": 10, "add": -40, "sign": true, "unit": "celsius" }, "name": "Cabin temperature"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "400A"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_EVAP_T", "path": "Climate", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Evaporator temperature"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4341"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_PTC_REQ", "path": "Climate", "fmt": {"bix": 4, "len": 4, "max": 15, "unit": "scalar" }, "name": "Electric heater request"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4368"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_EVAP_T_SET", "path": "Climate", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Evaporator temperature set point"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4369"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_P", "path": "Climate", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "bars" }, "name": "A/C compressor pressure"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "43A4"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_HEAT_T", "path": "Climate", "fmt": { "len": 16, "max": 215.996, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Heating temperature"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "43A5"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COND_T_SET", "path": "Climate", "fmt": { "len": 16, "max": 87.998, "min": -40, "div": 512, "add": -40, "unit": "celsius" }, "name": "Heating condenser temperature set point"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "43D8"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_RPM", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "A/C compressor speed"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4402"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_MODE", "path": "Climate", "name": "A/C compressor mode", "fmt": {"bix": 4, "len": 4, "map": {
+          "1": { "description": "A/C",       "value": "AC" },
+          "2": { "description": "De-ice",    "value": "DEICE" },
+          "4": { "description": "Heat pump", "value": "HEAT_PUMP" },
+          "6": { "description": "Demisting", "value": "DEMIST" },
+          "7": { "description": "Idle",      "value": "IDLE" }
+        }}
+    }
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4404"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_RPM_REQ", "path": "Climate", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "A/C compressor speed request"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "440C"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_DIS_T", "path": "Climate", "fmt": { "len": 16, "max": 32737.5, "min": -30, "div": 2, "add": -30, "unit": "celsius" }, "name": "A/C compressor discharge temperature"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "440D"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_SUC_T", "path": "Climate", "fmt": { "len": 16, "max": 32737.5, "min": -30, "div": 2, "add": -30, "unit": "celsius" }, "name": "A/C compressor suction temperature"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4429"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COND_T", "path": "Climate", "fmt": { "len": 16, "max": 215.996, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Heating condenser temperature"}
+  ]},
+{ "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "4436"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_COMP_PWR", "path": "Climate", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "watts" }, "name": "A/C compressor power"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "4109"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_FL_ALERT", "path": "Tires", "name": "Front left tire pressure alert", "fmt": {"len": 16, "map": {
+          "0": { "description": "None",    "value": "NONE" },
+          "1": { "description": "Alert",   "value": "ALERT" },
+          "2": { "description": "Warning", "value": "WARNING" },
+          "3": { "description": "Alert",   "value": "ALERT" },
+          "4": { "description": "Warning", "value": "WARNING" },
+          "5": { "description": "Alert",   "value": "ALERT" },
+          "6": { "description": "Warning", "value": "WARNING" },
+          "7": { "description": "Alert",   "value": "ALERT" }
+        }}
+    }
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "410A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_FR_ALERT", "path": "Tires", "name": "Front right tire pressure alert", "fmt": {"len": 16, "map": {
+          "0": { "description": "None",    "value": "NONE" },
+          "1": { "description": "Alert",   "value": "ALERT" },
+          "2": { "description": "Warning", "value": "WARNING" },
+          "3": { "description": "Alert",   "value": "ALERT" },
+          "4": { "description": "Warning", "value": "WARNING" },
+          "5": { "description": "Alert",   "value": "ALERT" },
+          "6": { "description": "Warning", "value": "WARNING" },
+          "7": { "description": "Alert",   "value": "ALERT" }
+        }}
+    }
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "410B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_RL_ALERT", "path": "Tires", "name": "Rear left tire pressure alert", "fmt": {"len": 16, "map": {
+          "0": { "description": "None",    "value": "NONE" },
+          "1": { "description": "Alert",   "value": "ALERT" },
+          "2": { "description": "Warning", "value": "WARNING" },
+          "3": { "description": "Alert",   "value": "ALERT" },
+          "4": { "description": "Warning", "value": "WARNING" },
+          "5": { "description": "Alert",   "value": "ALERT" },
+          "6": { "description": "Warning", "value": "WARNING" },
+          "7": { "description": "Alert",   "value": "ALERT" }
+        }}
+    }
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "410C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_RR_ALERT", "path": "Tires", "name": "Rear right tire pressure alert", "fmt": {"len": 16, "map": {
+          "0": { "description": "None",    "value": "NONE" },
+          "1": { "description": "Alert",   "value": "ALERT" },
+          "2": { "description": "Warning", "value": "WARNING" },
+          "3": { "description": "Alert",   "value": "ALERT" },
+          "4": { "description": "Warning", "value": "WARNING" },
+          "5": { "description": "Alert",   "value": "ALERT" },
+          "6": { "description": "Warning", "value": "WARNING" },
+          "7": { "description": "Alert",   "value": "ALERT" }
+        }}
+    }
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "4186"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_LOW_BEAM", "path": "Lights", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Low beams on"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6026"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_FL_DOOR", "path": "Doors", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Front left door open"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6027"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_FR_DOOR", "path": "Doors", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Front right door open"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "609B"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_TAILGATE", "path": "Doors", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Tailgate open"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "60C6"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_IGN", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Ignition relay on"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "61B2"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_RL_DOOR", "path": "Doors", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Rear left door open"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "61B3"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_RR_DOOR", "path": "Doors", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Rear right door open"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6300"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_FL", "path": "Tires", "fmt": { "len": 16, "max": 767.25, "mul": 3, "div": 4, "nullmax": 767.25, "unit": "kilopascal" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6301"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_FR", "path": "Tires", "fmt": { "len": 16, "max": 767.25, "mul": 3, "div": 4, "nullmax": 767.25, "unit": "kilopascal" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6302"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_RL", "path": "Tires", "fmt": { "len": 16, "max": 767.25, "mul": 3, "div": 4, "nullmax": 767.25, "unit": "kilopascal" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6303"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TP_RR", "path": "Tires", "fmt": { "len": 16, "max": 767.25, "mul": 3, "div": 4, "nullmax": 767.25, "unit": "kilopascal" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6310"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TT_FL", "path": "Tires", "fmt": { "len": 8, "max": 97, "min": -30, "add": -30, "nullmax": 97, "unit": "celsius" }, "name": "Front left tire temperature", "suggestedMetric": "frontLeftTireTemperature"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6311"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TT_FR", "path": "Tires", "fmt": { "len": 8, "max": 97, "min": -30, "add": -30, "nullmax": 97, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6312"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TT_RL", "path": "Tires", "fmt": { "len": 8, "max": 97, "min": -30, "add": -30, "nullmax": 97, "unit": "celsius" }, "name": "Rear left tire temperature", "suggestedMetric": "rearLeftTireTemperature"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "6313"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_TT_RR", "path": "Tires", "fmt": { "len": 8, "max": 97, "min": -30, "add": -30, "nullmax": 97, "unit": "celsius" }, "name": "Rear right tire temperature", "suggestedMetric": "rearRightTireTemperature"}
+  ]},
+{ "hdr": "745", "rax": "765", "dbg": true, "cmd": {"22": "8004"}, "freq": 3,
+  "signals": [
+    {"id": "SPRING_LOCKED", "path": "Doors", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Vehicle locked"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2002"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_SOC_EVC", "path": "Battery", "fmt": { "len": 16, "max": 1310.7, "div": 50, "unit": "percent" }, "name": "State of charge, vehicle controller"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2003"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_VSS", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2005"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_12V_V", "path": "Electrical", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "volts" }, "name": "12V battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2006"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_ODO_EVC", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "20FE"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_HV_V_EVC", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "volts" }, "name": "High voltage battery voltage, vehicle controller"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "21CC"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_HV_A_EVC", "path": "Battery", "fmt": { "len": 16, "max": 15883.75, "min": -500, "div": 4, "add": -500, "unit": "amps" }, "name": "High voltage battery current, vehicle controller"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "21CF"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_INV_STATE", "path": "Drivetrain", "name": "Inverter state", "fmt": {"bix": 4, "len": 4, "map": {
+          "1": { "description": "Off",             "value": "OFF" },
+          "2": { "description": "On",              "value": "ON" },
+          "3": { "description": "Discharging",     "value": "DISCHARGING" },
+          "4": { "description": "Alternator mode", "value": "ALTERNATOR" },
+          "5": { "description": "Ready to sleep",  "value": "SLEEP_READY" }
+        }}
+    }
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2218"}, "freq": 20,
+  "signals": [
+    {"id": "SPRING_AAT", "path": "Climate", "fmt": { "len": 16, "max": 6280.5, "min": -273, "div": 10, "add": -273, "unit": "celsius" }, "name": "Ambient air temperature"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2B6D"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_CHG_STATE", "path": "Battery", "name": "Charge state", "fmt": {"bix": 4, "len": 4, "map": {
+          "0": { "description": "Stopped",           "value": "STOPPED" },
+          "1": { "description": "Waiting for timer", "value": "TIMER_WAIT" },
+          "2": { "description": "Done",              "value": "DONE" },
+          "3": { "description": "Battery",           "value": "CHARGING" },
+          "4": { "description": "Interrupted",       "value": "INTERRUPTED" },
+          "5": { "description": "Waiting for power", "value": "POWER_WAIT" },
+          "6": { "description": "Charge flap open",  "value": "FLAP_OPEN" },
+          "8": { "description": "Preparing",         "value": "PREPARING" }
+        }}
+    }
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2B7A"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_CHG_TYPE", "path": "Battery", "name": "Charge type", "fmt": {"bix": 4, "len": 4, "map": {
+          "0": { "description": "Undefined", "value": "UNDEFINED" },
+          "1": { "description": "Type 2",    "value": "TYPE2" },
+          "2": { "description": "Type 2",    "value": "TYPE2" },
+          "3": { "description": "CHAdeMO",   "value": "CHADEMO" },
+          "4": { "description": "CCS",       "value": "CCS" }
+        }}
+    }
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2B85"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_PLUG", "path": "Battery", "fmt": {"bix": 4, "len": 4, "max": 1, "unit": "noyes" }, "name": "Charge plug present", "suggestedMetric": "pluggedIn"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2B8A"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_AC_V", "path": "Battery", "fmt": { "len": 16, "max": 32767.5, "div": 2, "unit": "volts" }, "name": "AC mains voltage"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300B"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_AC_PHASES", "path": "Battery", "name": "AC mains phases", "fmt": {"bix": 4, "len": 4, "map": {
+          "0": { "description": "One phase",    "value": "ONE" },
+          "1": { "description": "Two phase",    "value": "TWO" },
+          "2": { "description": "Three phase",  "value": "THREE" },
+          "3": { "description": "Not detected", "value": "NONE" }
+        }}
+    }
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300D"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_AC_A", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "amps" }, "name": "AC mains current"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300F"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_AC_P_AVAIL", "path": "Battery", "fmt": { "len": 16, "max": 1638.375, "div": 40, "unit": "kilowatts" }, "name": "AC charging power available"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "3042"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_HV_A_3042", "path": "Battery", "fmt": { "len": 16, "max": 16383.75, "min": -16383.75, "div": 2, "add": -16383.75, "unit": "amps" }, "name": "High voltage battery current"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "3064"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_MOTOR_RPM", "path": "Drivetrain", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Motor speed"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "9002"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_SOC_9002", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "State of charge"}
+  ]},
 { "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9001"}, "freq": 10,
   "signals": [
     {"id": "SPRING_SOC_9001", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "State of charge, battery controller"}
@@ -609,6 +894,58 @@
 { "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "F1A0"}, "freq": 1,
   "signals": [
     {"id": "SPRING_FAULT_FINDING", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fault finding version"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "2004"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_INV_HV_V", "path": "Drivetrain", "fmt": { "len": 16, "max": 2047.9687, "div": 32, "unit": "volts" }, "name": "Inverter high voltage"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7003"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_ROTOR_A1", "path": "Drivetrain", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "amps" }, "name": "Rotor current sensor 1"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7004"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_ROTOR_A2", "path": "Drivetrain", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "amps" }, "name": "Rotor current sensor 2"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7007"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_STATOR_A_U", "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687, "min": -500, "div": 32, "add": -500, "unit": "amps" }, "name": "Stator current, phase U"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7008"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_STATOR_A_V", "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687, "min": -500, "div": 32, "add": -500, "unit": "amps" }, "name": "Stator current, phase V"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7009"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_STATOR_A_W", "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687, "min": -500, "div": 32, "add": -500, "unit": "amps" }, "name": "Stator current, phase W"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "700C"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_INV_T", "path": "Drivetrain", "fmt": { "len": 24, "max": 32727.998, "min": -40, "div": 512, "add": -40, "unit": "celsius" }, "name": "Inverter temperature"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "700F"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_STATOR_T1", "path": "Drivetrain", "fmt": { "len": 24, "max": 32727.998, "min": -40, "div": 512, "add": -40, "unit": "celsius" }, "name": "Stator temperature 1"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7010"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_STATOR_T2", "path": "Drivetrain", "fmt": { "len": 24, "max": 32727.998, "min": -40, "div": 512, "add": -40, "unit": "celsius" }, "name": "Stator temperature 2"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7038"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_ROTOR_T_RAW", "path": "Drivetrain", "fmt": { "len": 16, "max": 471.9921, "min": -40, "div": 128, "add": -40, "unit": "celsius" }, "name": "Rotor temperature, raw"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7049"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_INV_HV_A", "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687, "min": -500, "div": 32, "add": -500, "unit": "amps" }, "name": "Inverter high voltage current"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7050"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_ROTOR_R", "path": "Drivetrain", "fmt": { "len": 16, "max": 127.998, "div": 512, "unit": "ohms" }, "name": "Rotor reference resistance"}
+  ]},
+{ "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7088"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_ROTOR_T", "path": "Drivetrain", "fmt": { "len": 16, "max": 471.9921, "min": -40, "div": 128, "add": -40, "unit": "celsius" }, "name": "Rotor temperature, estimated"}
   ]}
 ],
 "signalGroups": [
