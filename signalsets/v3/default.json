@@ -1,4 +1,617 @@
 { "commands": [
-
+{ "hdr": "743", "cmd": {"22": "0207"}, "freq": 30, "dbgfilter": { "to": 2022, "from": 2027 },
+  "signals": [
+    {"id": "SPRING_ODO", "path": "Trips", "fmt": { "len": 24, "blsb": true, "max": 16777215, "nullmin": 0, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "743", "rax": "763", "din": "C0", "dbg": true, "cmd": {"22": "2006"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_BAT_V", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "Battery voltage", "suggestedMetric": "starterBatteryVoltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9001"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_SOC_9001", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "State of charge, battery controller"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9002"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_SOC", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "unit": "percent" }, "name": "State of charge", "suggestedMetric": "stateOfCharge"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9003"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_SOH", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "State of health", "suggestedMetric": "stateOfHealth"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9005"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_HV_V", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "volts" }, "name": "High voltage battery voltage", "suggestedMetric": "tractionBatteryVoltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9006"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_AVG_V_CELLS", "path": "Battery", "fmt": { "len": 32, "max": 30840, "min": -30840, "div": 69632, "sign": true, "unit": "volts" }, "name": "Average voltage of cells"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9007"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_HIGHEST_CELL_V_LEVEL", "path": "Battery", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Highest cell voltage level"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9008"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_CELL_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Cell with the highest voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9009"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_LOWEST_CELL_V_LEVEL", "path": "Battery", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Lowest cell voltage level"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "900A"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_CELL_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Cell with the lowest voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9011"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_COMPUTER_POWER_SUP", "path": "Engine", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Computer power supply"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9012"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_HV_T", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "High voltage battery average temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9013"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_MIN_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery min. temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9014"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_MAX_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery max temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9018"}, "freq": 10,
+  "signals": [
+    {"id": "SPRING_CHG_P_MAX", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilowatts" }, "name": "Maximum charge power"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9021"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V1", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 1 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9022"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V2", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 2 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9023"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V3", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 3 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9024"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V4", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 4 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9025"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V5", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 5 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9026"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V6", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 6 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9027"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V7", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 7 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9028"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V8", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 8 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9029"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V9", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 9 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V10", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 10 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V11", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 11 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V12", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 12 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902D"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V13", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 13 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902E"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V14", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 14 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902F"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V15", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 15 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9030"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V16", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 16 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9031"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V17", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 17 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9032"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V18", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 18 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9033"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V19", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 19 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9034"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V20", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 20 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9035"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V21", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 21 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9036"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V22", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 22 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9037"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V23", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 23 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9038"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V24", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 24 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9039"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V25", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 25 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V26", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 26 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V27", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 27 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V28", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 28 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903D"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V29", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 29 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903E"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V30", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 30 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903F"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V31", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 31 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9041"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V32", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 32 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9042"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V33", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 33 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9043"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V34", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 34 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9044"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V35", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 35 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9045"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V36", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 36 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9046"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V37", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 37 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9047"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V38", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 38 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9048"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V39", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 39 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9049"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V40", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 40 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V41", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 41 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V42", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 42 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V43", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 43 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904D"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V44", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 44 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904E"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V45", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 45 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904F"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V46", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 46 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9050"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V47", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 47 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9051"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V48", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 48 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9052"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V49", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 49 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9053"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V50", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 50 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9054"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V51", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 51 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9055"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V52", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 52 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9056"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V53", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 53 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9057"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V54", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 54 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9058"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V55", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 55 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9059"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V56", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 56 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V57", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 57 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V58", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 58 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V59", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 59 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905D"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V60", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 60 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905E"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V61", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 61 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905F"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V62", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 62 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9061"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V63", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 63 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9062"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V64", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 64 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9063"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V65", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 65 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9064"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V66", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 66 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9065"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V67", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 67 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9066"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V68", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 68 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9067"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V69", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 69 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9068"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V70", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 70 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9069"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V71", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 71 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V72", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 72 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V73", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 73 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V74", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 74 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906D"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V75", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 75 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906E"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V76", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 76 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906F"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V77", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 77 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9070"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V78", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 78 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9071"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V79", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 79 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9072"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V80", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 80 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9073"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V81", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 81 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9074"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V82", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 82 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9075"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V83", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 83 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9076"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V84", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 84 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9077"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V85", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 85 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9078"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V86", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 86 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9079"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V87", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 87 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V88", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 88 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V89", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 89 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V90", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 90 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907D"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V91", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 91 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907E"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V92", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 92 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907F"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V93", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 93 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9081"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V94", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 94 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9082"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V95", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 95 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9083"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CELL_V96", "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "volts" }, "name": "Cell 96 voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "912E"}, "freq": 0.25,
+  "signals": [
+    {"id": "SPRING_FAN_SPD", "path": "Movement", "fmt": { "len": 8, "max": 8160, "mul": 32, "unit": "rpm" }, "name": "Fan speed"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9131"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T1", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 1"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9132"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T2", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 2"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9133"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T3", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 3"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9134"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T4", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 4"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9135"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T5", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 5"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9136"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T6", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 6"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9137"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T7", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 7"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9138"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T8", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 8"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9139"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T9", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 9"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "913A"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T10", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 10"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "913B"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T11", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 11"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "913C"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_PACK_T12", "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 12"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "91C8"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_HV_E_AVAIL", "path": "Battery", "fmt": { "len": 24, "max": 16777.215, "div": 1000, "unit": "kilowattHours" }, "name": "High voltage battery available energy"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91C9"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_MOTOR_DRIVEN_FAN", "path": "Engine", "fmt": { "len": 8, "max": 127, "div": 2, "unit": "percent" }, "name": "Motor-driven fan unit request"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CD"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_INPUT_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery input water temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CF"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_TOT", "path": "Battery", "fmt": { "len": 32, "max": 134217727, "div": 32, "add": 67108864, "sign": true, "unit": "kilometers" }, "name": "Traction battery total mileage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91EF"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_FAN_UNIT", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Fan unit"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F0"}, "freq": 0.25,
+  "signals": [
+    {"id": "SPRING_FAN_SPD_DADB", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fan speed"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F6"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_SERVICE", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Traction battery service plug interlock"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F7"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_INTERLOCK", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Traction battery interlock"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9210"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_CYCLES", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Complete charge cycles"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9216"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT",             "path": "Battery", "fmt": {          "len": 1, "max": 1, "unit": "scalar" }, "name": "Traction battery overheating"},
+    {"id": "SPRING_CELLS_OVERVOLTAGE",        "path": "Battery", "fmt": {"bix": 1, "len": 1, "max": 1, "unit": "scalar" }, "name": "Cell overvoltage"},
+    {"id": "SPRING_TRACTION_BAT_OVERCURRENT", "path": "Battery", "fmt": {"bix": 2, "len": 1, "max": 1, "unit": "scalar" }, "name": "Traction battery overcurrent"},
+    {"id": "SPRING_CELLS_UNDERVOLTAGE",       "path": "Battery", "fmt": {"bix": 3, "len": 1, "max": 1, "unit": "scalar" }, "name": "Cells undervoltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9221"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_1", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 1"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9222"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_2", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 2"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9223"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_3", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 3"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9224"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_4", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 4"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9225"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_5", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 5"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9226"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_6", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 6"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9227"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_7", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 7"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9228"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_BUSBAR_V_NO_8", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 8"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9242"}, "freq": 5,
+  "signals": [
+    {"id": "SPRING_MODULE_MIN_T", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Module with, minimum temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9243"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_E_CHG", "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilowattHours" }, "name": "Energy charged, total"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9245"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_E_DISCHG", "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilowattHours" }, "name": "Energy discharged, total"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9247"}, "freq": 60,
+  "signals": [
+    {"id": "SPRING_E_REGEN", "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilowattHours" }, "name": "Energy regenerated, total"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "925A"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_FAN_UNIT_FEED", "path": "Engine", "fmt": { "len": 8, "max": 1020, "mul": 4, "unit": "hertz" }, "name": "Fan unit feed"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "925D"}, "freq": 2,
+  "signals": [
+    {"id": "SPRING_HV_A", "path": "Battery", "fmt": { "len": 16, "max": 1020, "min": -1027.97, "mul": -1, "div": 32, "add": 1020, "unit": "amps" }, "name": "High voltage battery current", "suggestedMetric": "tractionBatteryCurrent"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9261"}, "freq": 30,
+  "signals": [
+    {"id": "SPRING_ABS_TIME_SINCE_FIRST", "path": "Engine", "fmt": { "len": 24, "max": 16777215, "unit": "minutes" }, "name": "Absolute time since first ignition"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9284"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_TRACTION_BAT_CURRENT", "path": "Battery", "fmt": { "len": 32, "max": 2147483, "min": -2147483, "mul": -1, "div": 1000, "sign": true, "unit": "amps" }, "name": "Traction battery, current"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "F1A0"}, "freq": 1,
+  "signals": [
+    {"id": "SPRING_FAULT_FINDING", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fault finding version"}
+  ]}
+],
+"signalGroups": [
+  {"id": "SPRING_CELLS_V", "path": "Battery.Cells", "matchingRegex": "SPRING_(CELL_V\\d+)", "name": "Cell voltages", "suggestedMetricGroup": "batteryModulesVoltage"}
 ]
 }
